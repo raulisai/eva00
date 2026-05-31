@@ -8,6 +8,7 @@ type AvatarStore = {
   speechText: string;
   activateIdle: () => void;
   setEmotion: (emotion: AvatarEmotion) => void;
+  setThinking: () => void;
   setLoadState: (loadState: AvatarLoadState) => void;
   setSpeaking: (isSpeaking: boolean) => void;
   setSpeechText: (speechText: string) => void;
@@ -25,6 +26,11 @@ export const useAvatarStore = create<AvatarStore>((set) => ({
       isSpeaking: false,
     }),
   setEmotion: (emotion) => set({ emotion }),
+  setThinking: () =>
+    set({
+      emotion: "thinking",
+      isSpeaking: false,
+    }),
   setLoadState: (loadState) => set({ loadState }),
   setSpeaking: (isSpeaking) => set({ isSpeaking }),
   setSpeechText: (speechText) => set({ speechText }),

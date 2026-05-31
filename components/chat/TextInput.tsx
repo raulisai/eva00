@@ -35,12 +35,20 @@ export function TextInput({ disabled, onSend }: TextInputProps) {
         value={value}
       />
       <button
-        className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal-500 text-lg text-white shadow-md shadow-teal-500/20 transition hover:bg-teal-400 disabled:cursor-not-allowed disabled:bg-zinc-300"
-        disabled={disabled}
         aria-label="Enviar"
+        className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-teal-500 text-white shadow-md shadow-teal-500/20 transition hover:bg-teal-400 disabled:cursor-not-allowed disabled:bg-zinc-300"
+        disabled={disabled}
         type="submit"
       >
-        ↗
+        <svg aria-hidden="true" className="h-5 w-5" fill="none" viewBox="0 0 24 24">
+          <path
+            d="m5 12 14-7-4 14-3-6-7-1Z"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </svg>
       </button>
     </form>
   );
