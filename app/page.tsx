@@ -1,6 +1,7 @@
 import { AvatarCanvas } from "@/components/avatar/AvatarCanvas";
 import { AvatarController } from "@/components/avatar/AvatarController";
 import { SpeechBubbleContainer } from "@/components/avatar/SpeechBubbleContainer";
+import { BrowserFrame } from "@/components/browser/BrowserFrame";
 import { ChatPanel } from "@/components/chat/ChatPanel";
 import { Sidebar } from "@/components/sidebar/Sidebar";
 
@@ -29,6 +30,8 @@ export default function Home() {
         </section>
 
         <SpeechBubbleContainer />
+
+        <BrowserFrame />
 
         <div className="absolute right-5 top-5 z-20 w-[min(480px,calc(100vw-120px))]">
           <AvatarController />
