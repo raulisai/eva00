@@ -23,3 +23,6 @@ Principales capacidades:
 La arquitectura técnica estará basada en React, Next.js, Three.js y React Three Fiber, utilizando modelos 3D optimizados para web en formato GLB/GLTF, con un sistema desacoplado entre la lógica del agente, la representación visual y los componentes de interfaz.
 
 El objetivo final es construir una experiencia donde el usuario no interactúe únicamente con formularios tradicionales, sino con un asistente visual inteligente capaz de presentar, explicar y gestionar la información dentro de un entorno inmersivo e interactivo.
+
+
+![alt text](image.png)
