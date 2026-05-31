@@ -28,7 +28,7 @@ export default function Home() {
           <AvatarCanvas />
         </section>
 
-        <div className="absolute left-[18%] top-[25%] z-10 hidden w-64 sm:block">
+        <div className="absolute left-[17%] top-[18%] z-10 hidden w-64 sm:block">
           <SpeechBubble />
         </div>
 

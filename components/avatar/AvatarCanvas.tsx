@@ -175,25 +175,31 @@ function EvaModel() {
     }
 
     if (bones.leftShoulder && basePose.leftShoulder) {
-      bones.leftShoulder.rotation.x = basePose.leftShoulder.x + breathing * 0.04;
-      bones.leftShoulder.rotation.z = basePose.leftShoulder.z + slowSway * 0.035 - (talking ? Math.sin(time * 5.5) * 0.026 : 0);
+      bones.leftShoulder.rotation.x = basePose.leftShoulder.x + breathing * 0.025;
+      bones.leftShoulder.rotation.y = basePose.leftShoulder.y + slowSway * 0.015;
+      bones.leftShoulder.rotation.z = basePose.leftShoulder.z - 0.18 + slowSway * 0.018;
     }
 
     if (bones.rightShoulder && basePose.rightShoulder) {
-      bones.rightShoulder.rotation.x = basePose.rightShoulder.x + breathing * 0.04;
-      bones.rightShoulder.rotation.z = basePose.rightShoulder.z - slowSway * 0.035 + (talking ? Math.sin(time * 5.5) * 0.026 : 0);
+      bones.rightShoulder.rotation.x = basePose.rightShoulder.x + breathing * 0.025;
+      bones.rightShoulder.rotation.y = basePose.rightShoulder.y - slowSway * 0.015;
+      bones.rightShoulder.rotation.z = basePose.rightShoulder.z + 0.18 - slowSway * 0.018;
     }
 
     if (bones.leftArm && basePose.leftArm) {
-      bones.leftArm.rotation.x = basePose.leftArm.x + breathing * 0.035 + (happy ? Math.sin(time * 2.6) * 0.035 : 0);
-      bones.leftArm.rotation.y = basePose.leftArm.y + secondarySway * 0.04;
-      bones.leftArm.rotation.z = basePose.leftArm.z + slowSway * 0.04;
+      const actionLift = talking ? Math.sin(time * 5.5) * 0.035 : happy ? Math.sin(time * 2.6) * 0.045 : 0;
+
+      bones.leftArm.rotation.x = basePose.leftArm.x + breathing * 0.02 + actionLift;
+      bones.leftArm.rotation.y = basePose.leftArm.y + secondarySway * 0.018;
+      bones.leftArm.rotation.z = basePose.leftArm.z - 1.12 + slowSway * 0.022;
     }
 
     if (bones.rightArm && basePose.rightArm) {
-      bones.rightArm.rotation.x = basePose.rightArm.x + breathing * 0.035 + (happy ? Math.sin(time * 2.6 + 0.6) * 0.035 : 0);
-      bones.rightArm.rotation.y = basePose.rightArm.y - secondarySway * 0.04;
-      bones.rightArm.rotation.z = basePose.rightArm.z - slowSway * 0.04;
+      const actionLift = talking ? Math.sin(time * 5.5 + 0.5) * 0.035 : happy ? Math.sin(time * 2.6 + 0.6) * 0.045 : 0;
+
+      bones.rightArm.rotation.x = basePose.rightArm.x + breathing * 0.02 + actionLift;
+      bones.rightArm.rotation.y = basePose.rightArm.y - secondarySway * 0.018;
+      bones.rightArm.rotation.z = basePose.rightArm.z + 1.12 - slowSway * 0.022;
     }
 
     const mouthEnergy = isSpeaking || emotion === "talking" ? (Math.sin(time * 18) + 1) * 0.45 : 0;

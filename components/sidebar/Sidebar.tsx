@@ -1,19 +1,19 @@
 export function Sidebar() {
   return (
-    <aside className="absolute left-3 top-3 z-30 hidden h-[calc(100%-24px)] w-20 rounded-2xl border border-white/80 bg-white/70 p-3 shadow-xl shadow-zinc-300/30 backdrop-blur-xl md:block">
+    <aside className="absolute left-3 top-3 z-30 hidden h-[calc(100%-24px)] w-14 rounded-2xl border border-white/80 bg-white/70 p-2 shadow-xl shadow-zinc-300/30 backdrop-blur-xl md:block">
       <div className="flex h-full flex-col items-center justify-between py-4">
-        <nav className="flex flex-col gap-8 text-2xl text-zinc-400">
-          <button className="rounded-xl bg-teal-50 p-3 text-teal-500" aria-label="Inicio" type="button">
-            ⌂
+        <nav className="flex flex-col gap-7 text-sm font-semibold text-zinc-400">
+          <button className="grid h-9 w-9 place-items-center rounded-xl bg-teal-50 text-teal-500" aria-label="Inicio" type="button">
+            H
           </button>
-          <button className="p-2" aria-label="Notas" type="button">
-            ♡
+          <button className="grid h-9 w-9 place-items-center rounded-xl" aria-label="Notas" type="button">
+            N
           </button>
-          <button className="p-2" aria-label="Mundo" type="button">
-            ◌
+          <button className="grid h-9 w-9 place-items-center rounded-xl" aria-label="Mundo" type="button">
+            B
           </button>
-          <button className="p-2" aria-label="Sistema" type="button">
-            ⚙
+          <button className="grid h-9 w-9 place-items-center rounded-xl" aria-label="Sistema" type="button">
+            S
           </button>
         </nav>
         <div className="flex flex-col items-center gap-3">
