@@ -8,8 +8,13 @@ const controls: AvatarEmotion[] = ["idle", "thinking", "talking", "happy", "aler
 export function AvatarController() {
   const emotion = useAvatarStore((state) => state.emotion);
   const loadState = useAvatarStore((state) => state.loadState);
+  const activateIdle = useAvatarStore((state) => state.activateIdle);
   const setEmotion = useAvatarStore((state) => state.setEmotion);
   const reset = useAvatarStore((state) => state.reset);
+
+  function activateIdleState() {
+    activateIdle();
+  }
 
   return (
     <section className="rounded-xl border border-white/70 bg-white/55 p-3 shadow-lg shadow-zinc-300/20 backdrop-blur-xl">
@@ -26,7 +31,14 @@ export function AvatarController() {
                 : "bg-white/80 text-zinc-500 hover:bg-white hover:text-teal-600"
             }`}
             key={item}
-            onClick={() => setEmotion(item)}
+            onClick={() => {
+              if (item === "idle") {
+                activateIdleState();
+                return;
+              }
+
+              setEmotion(item);
+            }}
             type="button"
           >
             {item}
